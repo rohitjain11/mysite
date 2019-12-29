@@ -1,0 +1,31 @@
+{%load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Register</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="{%static 'css/register.css'%}" type="text/css">
+    </head>
+    <body id="main">
+         <div class="r-box">
+             <img src="{%static 'images/user-icon.jpg'%}" class="avatar">
+             <h1>User register</h1>
+             <form method="POST" action="{%url 'register'%}">
+                 {% csrf_token %}
+                 <p>Full Name</p>
+                 <input type="text" name="name" placeholder="eg. Rohit">
+                 <p>UserName</p>
+                 <input type="text" name="username" placeholder="eg. Jain">
+                 <p>Contact Number</p>
+                 <input type="text" name="num" placeholder="eg. 8822554466" maxlength="10">
+                 <p>Email</p>
+                 <input type="email" name="email" placeholder="enter email">
+                 <p>Password</p>
+                 <input type="password" name="pword" placeholder="enter password">
+                 <input type="submit" name="submit" value="Register">
+             </form>
+             
+        </div>    
+
+    </body>
+</html>

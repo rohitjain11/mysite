@@ -1,0 +1,51 @@
+{%load static %}
+<!DOCTYPE html>
+<html>
+<title>Product list</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+<style>
+body {font-family: "Raleway", Arial, sans-serif}
+.w3-row img {margin-bottom: -8px}
+</style>
+<link rel="stylesheet" href="{%static 'css/profile.css'%}">
+<link rel="stylesheet" href="{%static 'css/index.css'%}">
+<body class="">
+    <header>
+        <div class="main">
+            <div class="logo">
+                <h3>shop</h3>
+            </div>
+            <div>
+                    <ul>
+                            <li><a href="#"><Span>User : {{dd.name}}</Span></a></li>
+                            <li><a href="{%url 'logout'%}">LogOut</a></li>
+            
+                    </ul>
+            </div>
+            
+        </div>
+    </header>
+    <h3 id="h3">Product List</h3>
+        <br>
+    <div class="orderlist">
+    
+        {% for list in ol %}
+        <div id="item-box">
+            <div id="img">
+               <a href="{%url 'product_details' list.id%}"> <img src="{{ list.image.url}}" height="150px" width="150"></a>
+            </div>
+            
+            <div><h4 id="h3">{{ list.p_name}}</h4></div>
+
+            <div><h4 id="h3">Quantity : {{ list.quantity}}</h4></div>
+
+        </div>
+        {% endfor %}
+        </table>
+    </div>
+
+</body>
+</html>

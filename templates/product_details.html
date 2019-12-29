@@ -1,0 +1,49 @@
+{%load static %}
+<!DOCTYPE html>
+<html>
+<title>Product list</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+<style>
+body {font-family: "Raleway", Arial, sans-serif}
+.w3-row img {margin-bottom: -8px}
+</style>
+<link rel="stylesheet" href="{%static 'css/profile.css'%}">
+<link rel="stylesheet" href="{%static 'css/index.css'%}">
+<body class="">
+    <header>
+        <div class="main">
+            <div class="logo">
+                <h3>shop</h3>
+            </div>
+            <div>
+                    <ul>
+                            <li><a href="#"><Span>User : {{dd.name}}</Span></a></li>
+                            <li><a href="{%url 'logout'%}">LogOut</a></li>
+            
+                    </ul>
+            </div>
+            
+        </div>
+    </header>
+    <h3 id="h3">Product Details</h3>
+        <br>
+    <div class="product">
+        <div><img src="{{ ol.image.url}}" ></div>
+
+        <div id="details">
+            <h2>{{ol.p_name}}</h2>
+            <h4>Qty : {{ol.quantity}}</h4>
+            <h4>price : $ 100</h4>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet commodi tempore quidem? Similique animi sint debitis dolor atque qui tempore quia quasi, in itaque. Cum quis veritatis ratione? Saepe, quae.</p>
+            <br>
+            <a href="#"><h1>Buy</h1></a>
+        </div>
+
+        
+    </div>
+
+</body>
+</html>
